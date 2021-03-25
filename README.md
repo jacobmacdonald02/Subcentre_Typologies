@@ -46,7 +46,7 @@ The focus of this work is London, England. As capital and international city, Lo
 
 London has a total of 8,154 WZ tracts spread over a total area of 157,353 hectares (1,573.5 km**<sup>2</sup>). The map of WZ employment density deciles reveal a clear central clustering pattern, however several periphiral employment hotspots are visible as well. From an aerial perspective, London follows clear patterns of monocentricity centered around the city's geographic and historic centre. Total employment densities are highest primarily in the central area along the Thames river, with a decaying pattern of declining densities moving in any direction towards the city peripheral.
 
-<img src="/Users/jake_mac02/Dropbox/Research/Employment/Subcentre_Typologies/README_files/figure-markdown_github/London Map of Employment Density-1.png" width="100%" />
+<img src="https://github.com/jacobmacdonald02/Subcentre_Typologies/blob/master/README_files/figure-markdown_github/Central%20London%20%26%20CBD-1.png" width="100%" />
 
 This general indication of monocentricity in employment density is important to verify prior to the application of a subcentre identification model built on density gradient decay. While many cities follow patterns of clustered employment density towards the geographic centre of the city, a first stage mapping of current employment densities is important.
 
