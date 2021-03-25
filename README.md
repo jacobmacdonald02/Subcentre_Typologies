@@ -3,7 +3,7 @@ Exploring Typologies of Employment Subcentres in London, England
 Jacob L. Macdonald, University of Liverpool; <Jacob.Macdonald@liverpool.ac.uk> & Pranjal Dave
 
 1. Introduction
-===============
+---------------
 
 This *.Rmd* document explores an industry-based breakdown of business and employment densities within London's urban employment subcentres. A monocentric urban detection algorithm is first applied to identify the spatial extent of dense employment hot-spots in the peripheral areas surrounding the primary central business district (CBD) (available through x\_\_\_x). The sectoral composition of different employment subcentres in the city are tracked using spatially granular employment and business registry details according to broad industry typologies. We make a particular distinction between those subcentres and employment cores making up London's well defined Central Activity Zone (CAZ) - a central employment region itself on an international scale, orders of magnitude above other employment centres and subcentres across the country.
 
@@ -20,10 +20,9 @@ While employment density statistics may be limited in temporal scope, other data
 Employment subcentres, and their location, are inherently complex and linked to any number of urban dynamics from population densities, transportation links, urban or natural amenities. Using the distribution of registered businesses by industry sector located within subcentres can identify commonalities and differences between these key urban locations. The spatial distribution of a city's workforce can have important implications on any number of urban policies. Even more, as different sectors and industries of the economy can have varying workforces and geographic patterns, open source spatial and granular tools and data to explore these dynamics can be just one way to explore and highlight these dynamics for informed research-based decision making.
 
 2. Data and Study Region
-========================
+------------------------
 
-2.1. Granular Employment and Business Data
-------------------------------------------
+### 2.1. Granular Employment and Business Data
 
 This work is conducted using entirely open and accessible data and tools. The most recent geographically granular available data on employment levels is from the UK Census 2011, obtained online through the [Nomis](https://www.nomisweb.co.uk/ "ONS Nomis Labour Market Statistics") platform. Detailed working day population statistics are available for small area Workplace Zone (WZ) tract boundaries allowing spatial measures of employment density to be constructed. We are specifically interested in the employment levels (Table WP102EW), along with corresponding industry sector breakdown, as they are distributed across space.
 
@@ -41,8 +40,7 @@ Granular business data is more easily available consistently over space and time
 
 Finally, the CDRC [London Workplace Zone Classification (LWZC)](https://data.cdrc.ac.uk/dataset/london-workplace-zone-classification) is a geogdemographic at the WZ level providing a clustering classification for each geography based on a series of input data, and tailored to London specific. This classification identifies different types of WZ compositions across six domains including the areas employment structure, dynamism, employee characteristics, job characteristics, commuting, and residential context. Each WZ is assigned to one of six supergroups classifying areas into residential, city focus, or metropolitan among other finer disaggregations. All together, this gives us a view of each individual WZ tract in terms of its sector-based employment, density, and characteristics of the local demographics. As WZ are self-organized into employment subcentre clusters, we will be able to compare the composition and evolution of these geographic areas relative to the remainder of the city.
 
-2.2. Study Region: London, England
-----------------------------------
+### 2.2. Study Region: London, England
 
 The focus of this work is London, England. As capital and international city, London attracts a sizeable workforce and population with around 6 million jobs in 2019 and steadily increasing over the long run (ONS 2020). Much of this workforce come from outside of the UK either from the EU or elsewhere in the world (PwC 2017) attracted by jobs in professional services, scientific and technical industries, finance and insurance, information and communication, and business administration and support services.
 
@@ -90,14 +88,13 @@ Total employment in 2011 was 4,500,481 across 157,353 hectares. London is split 
 This table shows the extent to which employment and employment density fall as we move further away from the central area of the city. Significant employment densities are found in the most central boroughs in London which correspond to those inner CAZ areas responsible for a large portion of the workforce, output and economic activity of the city and country as a whole including: City of London, Southwark, and Tower Hamlets. These aggregate borough level statistics however mask much more detailed spatial patterns. Building a series of employment centre and subcentre zones using granular open data allows us to identify these employment hotspots across the entire municipality.
 
 3. Employment Subcentre Identification
-======================================
+--------------------------------------
 
 The literature on subcentre identification is wide and employs a range of different methodologies. Primarily, subcentres can be identified using a functional form approach in comparing employment densities to expected values with appropriate decaying on distance from a central point; or highlight spatial clusters and similarities in employment dynamics based on local spatial autocorrelation parameters. The choice of method is dependant on the study context and underlying assumptions on the spatial structure of the urban area. In urban areas described well by some historic and geographic area (CBD) from which employment decays exponentially, we can use the estimated shape of this decay to identify outlier areas based on some threshold values.
 
 The subcentre identification algorithm here is based off a parametric model of monocentric employment density (sources xxxxx). A more flexible functional form approach to the Giuliano and Small (1991) and Ban et al. (2017). The subcentre identification algorithm used is based on exponentially decaying cutoffs used to identify clusters of local tracts of employment which have densities and total employment levels exceeding the expected value of density from a purely monocentric decay model of employment density.
 
-3.1. Method of Exponentially Decaying Cutoffs
----------------------------------------------
+### 3.1. Method of Exponentially Decaying Cutoffs
 
 This method of exponential decay is adopted from Ban et al. (2017) and adopted for the London context.
 
@@ -123,8 +120,7 @@ The subcentre identification algorithm proceeds as follows:
 
 1- 2- 3- Candidate tracts are elevated to subcentres if
 
-3.2. Parameter Fine-Tuning
---------------------------
+### 3.2. Parameter Fine-Tuning
 
 Two key parameters on employment level and density are used in the exponentially decaying subcentre identification method by Giuliano and Small (1991) and subsequently adapted by Ban et al. (2017). These include the
 
@@ -146,8 +142,7 @@ We choose parameter values of D= and E= to correspond to the distance from the c
 
 We need to scale these parameters appropriately for the London context.
 
-3.3. London's Employment Subcentres
------------------------------------
+### 3.3. London's Employment Subcentres
 
 After fine tuning the algorithm parameters for the London context, we reveal a map of employment subcentres across the city. With the granularity of WZ boundaries in core employment areas, we are able to delineate geographically granular employment areas in the city. The extent of the core CBD in central London is also highlighted with additional areas of high employment out around the city peripheral.
 
@@ -184,7 +179,7 @@ The economy of London very much linked to geography with well defined industries
 |     | Max. :112919   |  Max. :150.511  |  Max. :28.222  |  Max. :799.33  |  Max. :33.00  |
 
 4. Decomposing London Subcentres By Industry Typologies
-=======================================================
+-------------------------------------------------------
 
 We decompose employment areas in the greater municipal area according to the industry sectors of prominence located within, considering both employment and business composition. Detailed sectoral employment levels over space are limited to Census 2011 WZ aggregates of broad SIC industry sector. More detailed SIC divisions can be extracted using the open business registries to provide another indication of the types of industry sectors located over space. Additionally, relative proportions and distributions across the London WZ Classification geodemographic are used to identify any potential differences in employment areas and hotspots of the city.
 
@@ -207,35 +202,3 @@ Thus, the signature of the SIC-codes present in an employment center can be used
 <img src="/Users/jake_mac02/Dropbox/Research/Employment/Subcentre_Typologies/README_files/figure-markdown_github/Yearly Growth of Top Sectors-1.png" width="100%" />
 
 <img src="/Users/jake_mac02/Dropbox/Research/Employment/Subcentre_Typologies/README_files/figure-markdown_github/LWZC Breakdown-1.png" width="100%" />
-
-5. Conclusion
-=============
-
-References
-==========
-
-Office for National Statistics (ONS). 2014. "Workplace Zones: A new geography for workplace statistics" May - Bruce Mitchell <https://data.gov.uk/dataset/6620567e-f237-4c6b-b561-64a2bc218783/workplace-zones-a-new-geography-for-workplace-statistics>
-
-Ban et al. (2017)
-
-The Consumer Data Research Centre (CDRC) [London Workplace Zone Classification (LWZC)](https://data.cdrc.ac.uk/dataset/london-workplace-zone-classification) <https://data.london.gov.uk/dataset/london-workplace-zone-classification>
-
-[Nomis](https://www.nomisweb.co.uk/ "ONS Nomis Labour Market Statistics") Table WP102EW; WP605EW
-
-[UK Standard Industrial Classification (SIC) Hierarchy](https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html)
-
-NSPL
-
-[CDRC Business Census](https://data.cdrc.ac.uk/dataset/business-census)
-
-Office for National Statistics (ONS). 2020. [Workforce jobs SA : London (thousands).](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/jwu7/lms) Labour Market Statistics Time Series (LMS) (Series ID: JWU7). December 2020.
-
-PwC, London First. 2017. [Facing Facts: The impact of migrants on London, its workforce and its economy.](https://www.londonfirst.co.uk/sites/default/files/documents/2018-04/Facing-Facts.pdf) March 2017.
-
-<https://www.londonfirst.co.uk/news-publications/news/first-in-depth-analysis-of-londons-global-workforce-published>
-
-Giuliano, G., and K. Small. 1991. "Subcenters in the Los Angeles region." Regional Science and Urban Economics 21, 163-182.
-
-<https://www.london.gov.uk/sites/default/files/caz_spg_final.pdf>)
-
-City of London (XXXX) <https://www.london.gov.uk/what-we-do/planning/implementing-london-plan/london-plan-guidance-and-spgs/central-activities-zone>
